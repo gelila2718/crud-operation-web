@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Employee Form</title>
+</head>
+
+<body>
+  <div class="container">
+    <form method="post" class="form-container" action="/emp/">
+      {% csrf_token %}
+      <div class="form-group">
+        <h3 class="text-center mb-4">Enter Details</h3>
+      </div>
+      <div class="form-group">
+        <label for="emp_id" class="form-label">Employee Id:</label>
+        <input type="text" id="emp_id" name="emp_id" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="emp_name" class="form-label">Employee Name:</label>
+        <input type="text" id="emp_name" name="emp_name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="emp_email" class="form-label">Employee Email:</label>
+        <input type="email" id="emp_email" name="emp_email" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="emp_contact" class="form-label">Employee Contact:</label>
+        <input type="text" id="emp_contact" name="emp_contact" class="form-control">
+      </div>
+      <div class="form-group d-grid">
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      </div>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

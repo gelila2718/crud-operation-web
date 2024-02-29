@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Update Employee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <form method="POST" action="/update/{{employee.id}}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <h3 class="text-center">Update Details</h3>
+            </div>
+            <div class="mb-3">
+                <label for="emp_id" class="form-label">Employee Id:</label>
+                <input type="text" id="emp_id" name="eid" class="form-control" value="{{ employee.emp_id }}" required
+                    maxlength="20">
+            </div>
+            <div class="mb-3">
+                <label for="emp_name" class="form-label">Employee Name:</label>
+                <input type="text" id="emp_name" name="ename" class="form-control" value="{{ employee.emp_name }}"
+                    required maxlength="100">
+            </div>
+            <div class="mb-3">
+                <label for="emp_email" class="form-label">Employee Email:</label>
+                <input type="email" id="emp_email" name="email" class="form-control" value="{{ employee.emp_email }}"
+                    required maxlength="254">
+            </div>
+            <div class="mb-3">
+                <label for="emp_contact" class="form-label">Employee Contact:</label>
+                <input type="text" id="emp_contact" name="emp_contact" class="form-control"
+                    value="{{ employee.emp_contact }}" required maxlength="15">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
